@@ -44,7 +44,7 @@ app.get("/shoes", function (req, res) {
     const minPrice = req.query.minPrice;
     const maxPrice = req.query.maxPrice;
     const shoeType = req.query.type;
-    let filteredShoes = data.shoes.filter((shoe) => {
+    let filteredShoes = shoes.filter((shoe) => {
       return (
         shoe.price >= minPrice &&
         shoe.price <= maxPrice &&
@@ -53,7 +53,7 @@ app.get("/shoes", function (req, res) {
     });
     res.send(filteredShoes);
   } else {
-    res.send(data.shoes);
+    res.send(shoes);
   }
 });
 
