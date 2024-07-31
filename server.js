@@ -40,9 +40,9 @@ app.get("/collectibles/:item", function (req, res) {
 // 4. Filter Shoes by Query Parameters
 
 app.get("/shoes", function (req, res) {
-  if (req.query.minPrice && req.query.maxPrice && req.query.type) {
-    const minPrice = req.query.minPrice;
-    const maxPrice = req.query.maxPrice;
+  if (req.query['min-price'] && req.query['max-price'] && req.query.type) {
+    const minPrice = req.query['min-price'];
+    const maxPrice = req.query['max-price'];
     const shoeType = req.query.type;
     let filteredShoes = shoes.filter((shoe) => {
       return (
